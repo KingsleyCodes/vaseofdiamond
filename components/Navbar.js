@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
 import { motion, AnimatePresence } from "framer-motion";
@@ -133,26 +134,14 @@ export default function Navbar() {
             aria-label="VasofDiamond home"
             className={`group relative z-10 flex items-center gap-2.5 sm:gap-3 ${topText}`}
           >
-            <div
-              className={`
-                relative
-                flex
-                h-8
-                w-8
-                sm:h-9
-                sm:w-9
-                shrink-0
-                rotate-45
-                items-center
-                justify-center
-                transition-transform
-                duration-500
-                group-hover:rotate-[135deg]
-                border border-[#D4AF37]
-                bg-[#D4AF37]/10
-              `}
-            >
-              <div className="h-3 w-3 sm:h-3.5 sm:w-3.5 border border-[#D4AF37]" />
+            <div className="relative h-9 w-9 sm:h-10 sm:w-10 shrink-0 transition-transform duration-300 group-hover:scale-105">
+              <Image
+                src="/logo.png"
+                alt="VasofDiamond Logo"
+                fill
+                className="object-contain"
+                priority
+              />
             </div>
 
             <div className="flex flex-col leading-none">
@@ -414,8 +403,13 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                   className="flex items-center gap-2.5"
                 >
-                  <div className="flex h-7 w-7 rotate-45 items-center justify-center border border-[#D4AF37] bg-[#D4AF37]/10">
-                    <div className="h-2.5 w-2.5 border border-[#D4AF37]" />
+                  <div className="relative h-7 w-7 shrink-0">
+                    <Image
+                      src="/logo.png"
+                      alt="VasofDiamond Logo"
+                      fill
+                      className="object-contain"
+                    />
                   </div>
 
                   <div className="leading-none text-white">
